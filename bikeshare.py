@@ -35,7 +35,7 @@ month_list = ["all",
               "june",
               ]
 
-day_list = ["monday",
+str_day_list = ["monday",
             "tuesday",
             "wednesday",
             "thursday",
@@ -43,7 +43,7 @@ day_list = ["monday",
             "saturday",
             "sunday",
             "all"
-            ]
+                ]
 
 city_list = ["chicago", "new york city", "washington"]
 
@@ -98,13 +98,13 @@ def get_filters():
                    "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or All \n"
                   ).lower()
 
-    if gf_day not in day_list:
+    if gf_day not in str_day_list:
         while True:
             gf_day = input("\n"
                            "That is not a correct entry, please select one of the below options: \n"
                            "Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday or All\n "
                           ).lower()
-            if gf_day in day_list:
+            if gf_day in str_day_list:
                 break
     print('-' * 40)
     return gf_city, gf_month, gf_day
@@ -144,7 +144,7 @@ def load_data(ld_city, ld_month, ld_day):
     # Filter by day of week if applicable
     if ld_day != 'all':
         # Find weekday as a integer, no offset needed as "all" is in position 0
-        ld_weekday = day_list.index(ld_day)
+        ld_weekday = str_day_list.index(ld_day)
         # filter by day of week to create the new dataframe
         ld_df = ld_df[ld_df['day'] == ld_weekday]
     return ld_df
@@ -162,7 +162,7 @@ def time_stats(ts_df):
 
     # Display the most common day of week
     ts_most_common_day_int = int(ts_df['day'].mode())
-    print("The most common day is {}".format(day_list[ts_most_common_day_int]))
+    print("The most common day is {}".format(str_day_list[ts_most_common_day_int]))
 
     # Display the most common start hour
     ts_most_common_hour_int = int(ts_df['hour'].mode())
