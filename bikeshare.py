@@ -222,7 +222,7 @@ def trip_duration_stats(tds_df):
 def user_stats(us_df):
     """Displays statistics on bikeshare users."""
 
-    print('\nCalculating User Stats...\n')
+    print('\nCalculating user stats...\n')
     start_time = time.time()
 
     # Display counts of user types
