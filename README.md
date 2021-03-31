@@ -4,7 +4,7 @@
 Date created 31 March 2012
 
 ### Project Title
-Replace the Project Title
+Udacity Git Project
 
 ### Description
 Describe what your project is about and what it does
