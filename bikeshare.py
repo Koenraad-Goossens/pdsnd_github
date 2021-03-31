@@ -21,7 +21,7 @@ import pandas as pd
 # Set this option to display all columns when printing
 pd.set_option('display.max_columns', None)
 
-CITY_DATA = {'chicago': 'chicago.csv',
+city_data = {'chicago': 'chicago.csv',
              'new york city': 'new_york_city.csv',
              'washington': 'washington.csv'}
 
@@ -122,7 +122,7 @@ def load_data(ld_city, ld_month, ld_day):
         ld_df - Pandas DataFrame containing city data filtered by month and day
     """
     # Read values from CSV file
-    ld_df = pd.read_csv(CITY_DATA[ld_city])
+    ld_df = pd.read_csv(city_data[ld_city])
 
     # Covert "Start Time" from string to date_time
     ld_df['Start Time'] = pd.to_datetime(ld_df['Start Time'])
